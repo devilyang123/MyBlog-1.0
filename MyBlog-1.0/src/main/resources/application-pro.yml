@@ -1,0 +1,70 @@
+server:
+  port: 80
+  tomcat:
+    max-http-header-size: 1048576
+spring:
+  #datasource配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/blog?characterEncoding=utf-8&useSSL=false #修改为你数据库对应的连接信息
+    driver-class-name: com.mysql.jdbc.Driver
+    username: #修改为你数据库的用户名
+    password: #修改为你数据库的密码
+    type: com.alibaba.druid.pool.DruidDataSource
+  #jpa配置
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+#    properties:
+#     hibernate:
+#      format_sql: true
+  #freemarker配置
+  freemarker:
+    enabled: true
+    cache: true
+    charset: UTF-8
+    content-type: text/html
+    check-template-location: true
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+  #邮件配置
+  mail:
+    host: smtp.163.com
+    default-encoding: UTF-8
+    protocol: smtp
+    username: #修改为你自己的邮箱
+    password: #修改为你自己的邮箱授权码
+    properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+                required: true
+              ssl:
+                enable: true
+  #redis配置
+  redis:
+    database: 0
+    host: #修改为你redis所在的服务器IP
+    port: 6379
+  #热部署配置
+  devtools:
+    restart:
+      enabled: false
+      additional-paths: src/main/
+
+upload:
+  path: /usr/nginx/upload/ #修改为你将要上传至Nginx服务器的目录，别忘了Nginx的配置文件也要做修改，指向此目录
+  host: 192.168.231.129    #修改为你Nginx服务器的地址
+  username: root           #修改为你Nginx所在服务器的SFTP服务器的用户名
+  password: 123456         #修改为你Nginx所在服务器的SFTP服务器的密码
+  port: 22                 #修改为你Nginx所在服务器的SFTP服务器的端口
+  url: http://192.168.231.129/ #修改为访问你自己Nginx的URL前缀
+
+user:
+  active:
+    url:
+      prefix: http://127.0.0.1/ #用户注册发送邮箱激活链接中的URL前缀(要用公网IP或域名才能激活成功，修改为你自己的)
