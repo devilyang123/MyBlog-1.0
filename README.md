@@ -13,13 +13,13 @@
 * SpringBoot 定时任务
 
 ## 项目启动
-1.需要先安装Mysql、Redis、Nginx、Maven、JDK1.8+
-2.按照application-pro.yml 中的注释说明修改配置
-3.按照 /static/myPage.js文件中顶部注释修改配置
-4.使用blog.sql创建数据库
-5.将源码导入IDEA，运行ApplicationEntry.java，访问http://localhost
-6.或将项目打成war包后，放入Tomcat(8.5)的webapp目录下，启动Tomcat进行访问
-7.后台管理员默认账号：admin， 密码：123
+* 需要先安装Mysql、Redis、Nginx、Maven、JDK1.8+
+* 按照application-pro.yml 中的注释说明修改配置
+* 按照 /static/myPage.js文件中顶部注释修改配置
+* 使用blog.sql创建数据库
+* 将源码导入IDEA，运行ApplicationEntry.java，访问http://localhost
+* 或将项目打成war包后，放入Tomcat(8.5)的webapp目录下，启动Tomcat进行访问
+* 后台管理员默认账号：admin， 密码：123
 
 ## 说明
 本人18年7月份毕业，当时是为了练手+找工作做了该项目，在阿里云服务器跑了两个月左右。
